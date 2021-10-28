@@ -7,8 +7,6 @@ sever = "on"
 sckey = os.environ["SCKEY"]
 # 填入glados账号对应cookie
 cookie = os.environ["COOKIE"]
-cookie = "koa:sess.sig=uH4NKDLISfEM9KcTXXpMfgyOFI8;koa:sess=eyJ1c2VySWQiOjc1MzM4LCJfZXhwaXJlIjoxNjQyMDAzNTMxMzIxLCJfbWF4QWdlIjoyNTkyMDAwMDAwMH0=;__cfduid=deb58b9412593d6c3f36d06d91a1af19d1616083430"
-
 
 def start():
     url = "https://glados.rocks/api/user/checkin"
@@ -31,11 +29,11 @@ def start():
         time = time.split('.')[0]
         # print(time)
         if sever == 'on':
-            url3 = 'https://sct.ftqqapi.com/'.__add__(sckey).__add__('.send?text=').__add__(mess).__add__(
+            url3 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?text=').__add__(mess).__add__(
                 '，you have ').__add__(time).__add__(' days left')
             requests.get(url3)
     else:
-        url4 = 'https://sct.ftqqapi.com/'.__add__(sckey).__add__('.send?text=cookie过期')
+        url4 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?text=cookie过期')
         requests.get(url4)
 
 
