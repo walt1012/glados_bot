@@ -29,8 +29,8 @@ def start():
         time = time.split('.')[0]
         # print(time)
         if sever == 'on':
-            url3 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?text=').__add__(mess).__add__(
-                '，you have ').__add__(time).__add__(' days left')
+            url3 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?title=🚩🚩🚩🚩打卡🚩🚩🚩🚩&desp=').__add__(mess).__add__(
+                '，').__add__(time).__add__(' days left')
             requests.get(url3)
     else:
         url4 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?text=cookie过期')
