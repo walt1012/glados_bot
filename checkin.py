@@ -1,4 +1,6 @@
 import requests, json, os
+import cloudscraper
+scraper = cloudscraper.create_scraper(disableCloudflareV1=True)
 
 # server酱开关，填off不开启(默认)，填on同时开启cookie失效通知和签到成功通知
 # sever = os.environ["SERVE"]
@@ -17,10 +19,10 @@ def start():
     payload = {
         'token': 'glados_network'
     }
-    checkin = requests.post(url,
+    checkin = scraper.post(url,
                             headers={'cookie': cookie, 'referer': referer, 'origin': origin, 'user-agent': useragent,
                                      'content-type': 'application/json;charset=UTF-8'}, data=json.dumps(payload))
-    state = requests.get(url2,
+    state = scraper.get(url2,
                          headers={'cookie': cookie, 'referer': referer, 'origin': origin, 'user-agent': useragent})
 
     if 'message' in checkin.text:
@@ -31,10 +33,10 @@ def start():
         if sever == 'on':
             url3 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?title=🚩🚩🚩🚩打卡🚩🚩🚩🚩&desp=').__add__(mess).__add__(
                 '，').__add__(time).__add__(' days left')
-            requests.get(url3)
+            scraper.get(url3)
     else:
         url4 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?text=cookie过期')
-        requests.get(url4)
+        scraper.get(url4)
 
 
 def main_handler(event, context):
