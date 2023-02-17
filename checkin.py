@@ -31,11 +31,11 @@ def start():
         time = time.split('.')[0]
         # print(time)
         if sever == 'on':
-            url3 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?title=🚩🚩🚩🚩打卡🚩🚩🚩🚩&desp=').__add__(mess).__add__(
+            url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡🚩🚩🚩🚩'.__add__(mess).__add__(
                 '，').__add__(time).__add__(' days left')
             scraper.get(url3)
     else:
-        url4 = 'https://sctapi.ftqq.com/'.__add__(sckey).__add__('.send?text=cookie过期')
+        url4 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/COOKIE过期'
         scraper.get(url4)
 
 
