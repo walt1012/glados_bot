@@ -8,7 +8,7 @@ scraper = cloudscraper.create_scraper(disableCloudflareV1=True)
 # 填写server酱sckey,不开启server酱则不用填
 # sckey = os.environ["SCKEY"]
 # 填入glados账号对应cookie
-cookie1 = os.environ["COOKIE1"]
+# cookie1 = os.environ["COOKIE1"]
 cookie2 = os.environ["COOKIE2"]
 
 def start():
@@ -20,22 +20,22 @@ def start():
     payload = {
         'token': 'glados.network'
     }
-    checkin1 = scraper.post(url, headers={'cookie': cookie1, 'referer': referer, 'origin': origin, 'user-agent': useragent,
-                                     'content-type': 'application/json;charset=UTF-8'}, data=json.dumps(payload))
+    # checkin1 = scraper.post(url, headers={'cookie': cookie1, 'referer': referer, 'origin': origin, 'user-agent': useragent,
+    #                                  'content-type': 'application/json;charset=UTF-8'}, data=json.dumps(payload))
     checkin2 = scraper.post(url, headers={'cookie': cookie2, 'referer': referer, 'origin': origin, 'user-agent': useragent,
                                  'content-type': 'application/json;charset=UTF-8'}, data=json.dumps(payload))
     
-    state1 = scraper.get(url2, headers={'cookie': cookie1, 'referer': referer, 'origin': origin, 'user-agent': useragent})
+    # state1 = scraper.get(url2, headers={'cookie': cookie1, 'referer': referer, 'origin': origin, 'user-agent': useragent})
     state2 = scraper.get(url2, headers={'cookie': cookie2, 'referer': referer, 'origin': origin, 'user-agent': useragent})
 
     if ('message' in checkin1.text) and ('message' in checkin2.text):
-        mess1 = checkin1.json()['message']
+        # mess1 = checkin1.json()['message']
         mess2 = checkin2.json()['message']
 
-        time1 = state1.json()['data']['leftDays']
+        # time1 = state1.json()['data']['leftDays']
         time2 = state2.json()['data']['leftDays']
 
-        url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡1🚩🚩🚩🚩'.__add__('1:').__add__(str(time1)).__add__(' days left').__add__('\n2:').__add__(str(time2)).__add__(' days left')
+        url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡🚩🚩🚩🚩'.__add__(str(time2)).__add__(' days left')
 
         scraper.get(url3)
     else:
