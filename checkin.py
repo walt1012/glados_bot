@@ -28,7 +28,7 @@ def start():
     # state1 = scraper.get(url2, headers={'cookie': cookie1, 'referer': referer, 'origin': origin, 'user-agent': useragent})
     state2 = scraper.get(url2, headers={'cookie': cookie2, 'referer': referer, 'origin': origin, 'user-agent': useragent})
 
-    if ('message' in checkin1.text) and ('message' in checkin2.text):
+    if ('message' in checkin2.text):
         # mess1 = checkin1.json()['message']
         mess2 = checkin2.json()['message']
 
