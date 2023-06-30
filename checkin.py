@@ -32,8 +32,8 @@ def start():
         mess1 = checkin1.json()['message']
         mess2 = checkin2.json()['message']
 
-        time1 = state1.json()['data']['leftDays'].split('.')[0]
-        time2 = state2.json()['data']['leftDays'].split('.')[0]
+        time1 = state1.json()['data']['leftDays']
+        time2 = state2.json()['data']['leftDays']
 
         url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡1🚩🚩🚩🚩'.__add__(mess1).__add__('，').__add__(time1).__add__(' days left').__add__('🚩🚩🚩🚩打卡2🚩🚩🚩🚩').__add__(mess2).__add__('，').__add__(time2).__add__(' days left')
 
