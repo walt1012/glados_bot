@@ -33,7 +33,7 @@ def start():
         mess2 = checkin2.json()['message']
 
         # time1 = state1.json()['data']['leftDays']
-        time2 = state2.json()('data')['leftDays']
+        time2 = state2.json()['data'].get('leftDays')
 
         url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡🚩🚩🚩🚩'.__add__(str(time2)).__add__(' days left')
 
