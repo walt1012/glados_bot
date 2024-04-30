@@ -33,9 +33,9 @@ def start():
         mess2 = checkin2.json()['message']
 
         # time1 = state1.json()['data']['leftDays']
-        time2 = state2.json()['points']
+        time2 = state2.json()['data']['leftDays']
 
-        url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡🚩🚩🚩🚩'.__add__(str(time2)).__add__(' points left')
+        url3 = 'https://api.day.app/VHBmnRjJh7fKC47ZcELLr/🚩🚩🚩🚩打卡🚩🚩🚩🚩'.__add__(str(time2)).__add__(' days left')
 
         scraper.get(url3)
     else:
