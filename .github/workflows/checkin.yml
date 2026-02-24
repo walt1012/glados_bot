@@ -30,6 +30,4 @@ jobs:
       run: |
         python3 checkin.py 
       env: 
-        COOKIE1: ${{ secrets.COOKIE1 }}
-        COOKIE2: ${{ secrets.COOKIE2 }}
-#         SCKEY: ${{ secrets.SCKEY }}
+        COOKIE: ${{ secrets.COOKIE }}
