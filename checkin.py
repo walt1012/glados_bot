@@ -6,12 +6,12 @@ cookie = os.environ["COOKIE"]
 
 def start():
     url1 = "https://glados.cloud/console/checkin"
-    url2 = "https://glados.cloud/console/account"
+    url2 = "https://glados.cloud/api/user/status"
     origin = "https://glados.cloud"
     referer = "https://glados.cloud/console/checkin"
     useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
     payload = {
-        'token': 'glados.one'
+        'token': 'glados.cloud'
     }
     checkin = scraper.post(url1, headers={'cookie': cookie, 'referer': referer, 'origin': origin, 'user-agent': useragent,
                                  'content-type': 'application/json;charset=UTF-8'}, data=json.dumps(payload))
