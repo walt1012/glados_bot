@@ -5,10 +5,10 @@ scraper = cloudscraper.create_scraper(disableCloudflareV1=True)
 cookie = os.environ["COOKIE"]
 
 def start():
-    url1 = "https://glados.cloud/console/checkin"
+    url1 = "https://glados.cloud/api/user/checkin"
     url2 = "https://glados.cloud/api/user/status"
     origin = "https://glados.cloud"
-    referer = "https://glados.cloud/console/checkin"
+    referer = "https://glados.cloud/api/user/checkin"
     useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
     payload = {
         'token': 'glados.cloud'
