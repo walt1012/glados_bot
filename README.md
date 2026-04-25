@@ -1,40 +1,35 @@
-# 怎么说 看运气签到
+# GLaDOS Check-in
 
+使用 GitHub Actions 定时执行 GLaDOS 签到，并在 Actions 日志中输出签到结果和剩余天数。
 
+## 使用方式
 
+1. Fork 本仓库。
+2. 在仓库的 `Settings > Secrets and variables > Actions` 中添加 secret：
+   - `COOKIE`：GLaDOS 登录后的 cookie。
+3. 在 `Actions` 页面启用工作流。
+4. 手动运行 `GLaDOS Check-in`，或等待定时任务自动触发。
 
+## 本地运行
 
+```bash
+python -m pip install -r requirements.txt
+COOKIE="your-cookie" python checkin.py
+```
 
+## 开发检查
 
+```bash
+python -m pip install -r requirements-dev.txt
+ruff check .
+ruff format .
+```
 
-# glados-checkin
-  每天自动签到（天数+1），自动推送结果  
+## 工作流
 
-# clash 使用教程：  
-  http://www.xmstudent.ml/post-24.html
+默认触发方式：
 
-
-# glados 注册
-  [注册链接：https://glados.rocks/](https://glados.rocks/)   
-  注：先复制下面激活码，注册后送3天，包月（10g），如果有教育邮箱可以使用教育plan（360天）（50g）  
-      （若是普通邮箱注册，可更改为.edu邮箱，点下面的 for education 进行申请）  
-
-# Github Actions说明
-## 一、Fork此仓库
-## 二、设置账号密码
-
-添加名为——值分别为：  
-**SERVE**  ——**on/off** 你想你的serve酱开不开启通知  
-**SCKEY**  ——**sckey**  开的话填你的serve酱的sckey，不开就不填   
-**COOKIE** —— **cookie** 弄上你账号的cookie  
-暂不支持多账号，懒得弄
-
-## 三、启用Action
-1 点击**Action**，再点击**I understand my workflows, go ahead and enable them**  
-2 修改任意文件后提交一次  
-
-## 四、查看运行结果
-Actions > Cloud189Checkin > build  
-能看到如下图所示，表示成功，或者看你微信通知  
-![](http://tu.yaohuo.me/imgs/2020/06/289432b53bded61c.png)  
-
+- 手动触发：`workflow_dispatch`
+- 推送到 `main` 分支
+- 向 `main` 分支提交 Pull Request
+- 每天 UTC 09:45 和 23:45 定时执行
