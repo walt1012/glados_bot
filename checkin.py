@@ -8,11 +8,11 @@ from typing import Any
 
 import cloudscraper
 
-CHECKIN_URL = "https://glados.cloud/api/user/checkin"
-STATUS_URL = "https://glados.cloud/api/user/status"
-BASE_URL = "https://glados.cloud"
+CHECKIN_URL = "https://railgun.info/api/user/checkin"
+STATUS_URL = "https://railgun.info/api/user/status"
+BASE_URL = "https://railgun.info"
 REFERER = CHECKIN_URL
-TOKEN = "glados.cloud"
+TOKEN = "railgun.info"
 TIMEOUT_SECONDS = 30
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
