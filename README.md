@@ -5,8 +5,7 @@
 ## 使用方式
 
 1. Fork 本仓库。
-2. 在仓库的 `Settings > Secrets and variables > Actions` 中添加 secret：
-   - `COOKIE`：GLaDOS 登录后的 cookie。
+2. 在仓库的 `Settings > Secrets and variables > Actions` 中添加 secret：`COOKIE`：GLaDOS 登录后的 cookie。
 3. 在 `Actions` 页面启用工作流。
 4. 手动运行 `GLaDOS Check-in`，或等待定时任务自动触发。
 
